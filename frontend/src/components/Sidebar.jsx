@@ -11,7 +11,7 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`min-h-screen w-[30%] fixed top-0 px-2 text-white transition-all duration-300 ${
+      className={`min-h-screen md:block hidden w-[30%] fixed top-0 px-2 text-white transition-all duration-300 ${
         darkMode ? "bg-gray-900 text-gray-700" : "bg-blue-700"
       }`}>
       <ul className="space-y-5">

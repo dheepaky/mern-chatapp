@@ -1,4 +1,4 @@
-import HomepageNav from "./Homepage";
+import HomepageNav from "./HomePageNav";
 
 export default function UserList() {
   return (

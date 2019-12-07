@@ -1,5 +1,5 @@
 import React from "react";
-import HomepageNav from "./Homepage";
+import HomepageNav from "./HomePageNav";
 
 export default function RoomList() {
   return (

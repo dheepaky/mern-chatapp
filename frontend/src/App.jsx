@@ -5,9 +5,9 @@ import Header from "./components/Header";
 import Layout from "./components/Layout";
 import Sidebar from "./components/Sidebar";
 import UserList from "./components/UserList";
-import HomepageNav from "./components/Homepage";
 import ChatList from "./components/ChatList";
 import RoomList from "./components/RoomList";
+import HomePageNav from "./components/HomePageNav";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         {/* <Route path="/chats" element={<Chatpage />} /> */}
         <Route element={<Layout />}>
-          <Route path="/" element={<HomepageNav />} />
+          <Route path="/" element={<HomePageNav />} />
           <Route path="/chatpage" element={<Chatpage />} />
           <Route path="/users" element={<UserList />} />
           <Route path="/chats" element={<ChatList />} />
@@ -23,6 +23,7 @@ function App() {
         </Route>
         {/*  */}
       </Routes>
+      <Footer />
     </Router>
   );
 }

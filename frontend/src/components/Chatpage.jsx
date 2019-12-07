@@ -4,29 +4,31 @@ import { useNavigate } from "react-router-dom";
 export default function Chatpage() {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col h-full min-w-screen  rounded-lg  ">
+    <div className="flex flex-col h-full rounded-lg  ">
       {/* individual Headers */}
-      <div className="flex gap-4 items-center shadow-2xs p-5 sticky top-0 bg-gray-100 z-10">
+      <div className="flex md:gap-4 gap-2  items-center shadow-2xs p-2 sticky top-0 bg-gray-50 z-10">
         {/* logo */}
-        <button className="cursor-pointer" onClick={() => navigate(-1)}>
-          <MdArrowBack size={20} />
+        <button
+          className="cursor-pointer p-3 rounded-full hover:bg-gray-200 active:bg-gray-300  transition-all"
+          onClick={() => navigate(-1)}>
+          <MdArrowBack size={24} />
         </button>
         <img
           src="/avatar-placeholder.png"
           alt=""
-          className="rounded-full h-10"
+          className="rounded-full md:h-10 h-8"
         />
         {/*chat username */}
         <h2 className="font-semibold">UserName</h2>
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-4 space-y-4   bg-amber-100">
+      <div className="flex-1 overflow-y-auto px-4 space-y-4   bg-[#fff8ea]">
         <div className="bg-white p-3 rounded-lg shadow w-fit mt-10">
           Hello 👋
         </div>
 
-        <div className="bg-green-800 text-white p-3 rounded-lg shadow w-fit ml-auto relative">
+        <div className="bg-[#e3ffd4]  z-10 text-black p-3 rounded-lg shadow w-fit ml-auto relative">
           Hi there! How are you?
         </div>
 
@@ -37,7 +39,7 @@ export default function Chatpage() {
           Hello 👋
         </div>
 
-        <div className="bg-green-800 text-white p-3 rounded-lg shadow w-fit ml-auto relative">
+        <div className="bg-[#f0fce6] text-black p-3 rounded-lg shadow w-fit ml-auto relative">
           Hi there! How are you?
         </div>
 
@@ -48,7 +50,7 @@ export default function Chatpage() {
           Hello 👋
         </div>
 
-        <div className="bg-green-800 text-white p-3 rounded-lg shadow w-fit ml-auto relative">
+        <div className="bg-[#f0fce6] text-black p-3 rounded-lg shadow w-fit ml-auto relative">
           Hi there! How are you?
         </div>
 
@@ -58,14 +60,14 @@ export default function Chatpage() {
       </div>
 
       {/* Input */}
-      <div className="bg-gray-100 p-4 flex items-center gap-2 bottom-0 sticky">
+      <div className="bg-gray-50 p-3 rounded-lg flex items-center gap-2 bottom-2 sticky">
         <input
           type="text"
           placeholder="Type a message..."
           className="flex-1 p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
-        <button className="bg-blue-500 cursor-pointer text-white px-3 py-3 rounded-lg hover:bg-blue-600 active:bg-blue-700 transition">
-          <MdSend size={20} />
+        <button className="bg-blue-500 cursor-pointer text-white px-2 py-2 rounded-lg hover:bg-blue-600 active:bg-blue-700 transition">
+          <MdSend size={23} />
         </button>
       </div>
     </div>
