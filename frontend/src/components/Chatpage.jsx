@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar";
 export default function Chatpage() {
   return (
     <div className="flex min-h-screen">
-      {/* Sidebar with fixed width */}
+      {/* Sidebar with fixed width */} 
 
       {/* Chat section takes remaining width */}
       <div className="flex flex-col flex-1 bg-amber-100">
