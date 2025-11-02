@@ -1,11 +1,7 @@
-import Chatpage from "./Chatpage";
-
 export default function Homepage() {
   return (
-    <>
-      <div>
-        <p>HomePage</p>
-      </div>
-    </>
+    <div className="text-center text-2xl font-semibold text-gray-700">
+      Welcome to the Homepage
+    </div>
   );
 }

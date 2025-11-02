@@ -1,26 +1,32 @@
-import useState from "react";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
-  const [toggleMenu, setToggleMenu] = useState(false);
-
   return (
-    <>
-      <div className="bg-blue-500 p-1  top-0 sticky">
-        {toggleMenu && (
-          <div
-            className="space-y-1 w-2 ml-5 py-5 cursor-pointer"
-            onClick={() => setToggleMenu(false)}>
-            <div className="border-2 border-black w-8"></div>
-            <div className="border-2 border-black w-8"></div>
-            <div className="border-2 border-black w-8"></div>
-          </div>
-        )}
-
-        <div className="  w-2 ml-6  cursor-pointer">
-          <div className="border-l-2 ml-2 -mt-11 border-black h-8   w-3 rotate-[43deg]"></div>
-          <div className="border-r-2  -mt-8 border-black h-8 w-3 -rotate-[43deg]"></div>
-        </div>
+    <div className="p-5 top-0 sticky px-2 bg-slate-200 z-10">
+      <div className="flex gap-10 justify-center">
+        <NavLink
+          to={"/"}
+          className={({ isActive }) =>
+            isActive ? "font-semibold text-blue-700 underline" : "text-gray-800"
+          }>
+          Home
+        </NavLink>
+        <NavLink
+          to={"/chat"}
+          className={({ isActive }) =>
+            isActive ? "font-semibold text-blue-700 underline" : "text-gray-800"
+          }>
+          Chat
+        </NavLink>
+        <NavLink
+          to={"/users"}
+          className={({ isActive }) =>
+            isActive ? "font-semibold text-blue-700 underline" : "text-gray-800"
+          }>
+          Users
+        </NavLink>
       </div>
-    </>
+    </div>
   );
 }
