@@ -11,6 +11,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/chats" element={<Chatpage />} />
         <Route element={<Layout />}>
           <Route path="/" element={<Homepage />} />
           <Route path="/chat" element={<Chatpage />} />
