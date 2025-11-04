@@ -7,8 +7,8 @@ export default function Layout() {
   return (
     <div className="flex min-h-screen ">
       <Sidebar />
-      <div className="flex md:flex-col md:flex-1  ">
-        <main className="flex-1 px-2  md:block hidden">
+      <div className="flex flex-col flex-1  ">
+        <main className="flex-1 px-2 ml-[30%]">
           <Outlet />
         </main>
         <Footer />

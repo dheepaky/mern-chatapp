@@ -1,11 +1,16 @@
-import { MdSend } from "react-icons/md";
+import { MdArrowBack, MdSend } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 export default function Chatpage() {
+  const navigate = useNavigate();
   return (
-    <div className="flex flex-col h-full min-w-screen md:min-w-fit rounded-lg  md:ml-[35%]">
+    <div className="flex flex-col h-full min-w-screen  rounded-lg  ">
       {/* individual Headers */}
-      <div className="flex gap-3 items-center shadow-2xs p-5 sticky top-0 bg-gray-100 z-10">
+      <div className="flex gap-4 items-center shadow-2xs p-5 sticky top-0 bg-gray-100 z-10">
         {/* logo */}
+        <button className="cursor-pointer" onClick={() => navigate(-1)}>
+          <MdArrowBack size={20} />
+        </button>
         <img
           src="/avatar-placeholder.png"
           alt=""

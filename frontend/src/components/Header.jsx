@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
-    <div className="p-5 top-0 sticky px-2 bg-slate-200 z-10">
+    <div className="bg-gray-300 p-5 top-0 sticky px-2 ml-[20%] z-10">
       <div className="flex gap-10 justify-center">
         <NavLink
           to={"/"}
@@ -13,7 +13,7 @@ export default function Header() {
           Home
         </NavLink>
         <NavLink
-          to={"/chat"}
+          to={"/chats"}
           className={({ isActive }) =>
             isActive ? "font-semibold text-blue-700 underline" : "text-gray-800"
           }>
