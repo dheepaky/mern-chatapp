@@ -37,7 +37,7 @@ export default function Sidebar() {
               className="rounded-full h-12 w-12"
             />
             <button onClick={toggleTheme} className="text-2xl">
-              {darkMode ? <MdLightMode /> : <MdDarkMode />}
+              {darkMode ? <MdDarkMode /> : <MdLightMode />}
             </button>
           </div>
           <div className="text-[14px] space-y-1">
