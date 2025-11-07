@@ -23,7 +23,9 @@ export default function Chatpage() {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-4 space-y-4   bg-[#fff8ea]">
+      <div className="flex-1 overflow-y-auto px-4 space-y-4  bg-[url('chatpage.png')] bg-repeat-round bg-cont  ">
+        {/* bg-[#fff8ea] */}
+
         <div className="bg-white p-3 rounded-lg shadow w-fit mt-10">
           Hello 👋
         </div>

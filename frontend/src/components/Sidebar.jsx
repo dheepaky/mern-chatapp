@@ -12,15 +12,15 @@ export default function Sidebar() {
   return (
     <div
       className={`min-h-screen md:block hidden w-[30%] fixed top-0 px-2 text-white transition-all duration-300 ${
-        darkMode ? "bg-gray-900 text-gray-700" : "bg-blue-700"
+        darkMode ? "bg-gray-900 text-gray-700" : "bg-blue-200"
       }`}>
       <ul className="space-y-5">
         {/* Header */}
-        <li className="flex justify-center gap-3 items-center p-3">
+        <li className="flex justify-center gap-3 items-center ">
           <img
-            src="/avatar-placeholder.png"
+            src="logo.png"
             alt=""
-            className="rounded-full h-10"
+            className="rounded-full h-17  w-fit object-cover "
           />
           <h2 className="font-semibold">ChatWebApp</h2>
         </li>
