@@ -12,23 +12,25 @@ export default function Sidebar() {
   return (
     <div
       className={`min-h-screen md:block hidden w-[30%] fixed top-0 px-2 text-white transition-all duration-300 ${
-        darkMode ? "bg-gray-900 text-gray-700" : "bg-blue-200"
+        darkMode ? "bg-gray-900 text-gray-700" : "bg-blue-800"
       }`}>
       <ul className="space-y-5">
         {/* Header */}
-        <li className="flex justify-center gap-3 items-center ">
+        <li className="flex justify-start gap-2 items-center px-10">
           <img
             src="logo.png"
             alt=""
-            className="rounded-full h-17  w-fit object-cover "
+            className="rounded-full h-15 p-1 w-fit object-cover "
           />
-          <h2 className="font-semibold">ChatWebApp</h2>
+          <h2 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-cyan-400 inline-block text-transparent bg-clip-text ">
+            ChatWebApp
+          </h2>
         </li>
 
         {/* User Info */}
         <li
           className={`font-bold text-xl text-center p-5 rounded-md shadow-2xs ${
-            darkMode ? "bg-gray-950 text-gray-400" : "bg-blue-600"
+            darkMode ? "bg-gray-950 text-gray-400" : "bg-blue-900"
           }`}>
           <div className="flex items-center justify-between mb-5">
             <img
@@ -40,7 +42,7 @@ export default function Sidebar() {
               {darkMode ? <MdDarkMode /> : <MdLightMode />}
             </button>
           </div>
-          <div className="text-[14px] space-y-1">
+          <div className="text-[14px] space-y-1 justify-items-start">
             <p>UserName</p>
             <p>Email@gmail.com</p>
           </div>
