@@ -12,7 +12,7 @@ export default function HomePageNav() {
     <>
       <div className="flex gap-2  items-center text-[14px]  md:text-[18px]  justify-between shadow-lg p-1   bg-gray-100">
         <div className="flex gap-2 items-center">
-          <div className="md:p-3 p-2 rounded-full hover:bg-gray-200 active:bg-gray-300 cursor-pointer transition-all">
+          <div className="active:bg-gray-300 md:p-3 p-2 rounded-full hover:bg-gray-200 cursor-pointer transition-all">
             <MdMenu size={20} />
           </div>
           <h2>ChatWebApp</h2>
@@ -25,13 +25,19 @@ export default function HomePageNav() {
           className={({ isActive }) =>
             `flex items-center gap-1 hover:scale-105 transition-all duration-300 ${
               isActive
-                ? "transition-all duration-300 font-semibold underline-offset-8 text-blue-700 underline scale-105"
-                : "text-gray-800 "
+                ? "font-semibold text-blue-700 scale-105"
+                : "text-gray-800"
             }`
           }>
-          <MdBorderAll />
-          All
+          <button
+            className={`button-border flex items-center ${
+              location.pathname === "/" ? "active" : ""
+            }`}>
+            <MdBorderAll />
+            All
+          </button>
         </NavLink>
+
         <NavLink
           to={"/chats"}
           className={({ isActive }) =>
