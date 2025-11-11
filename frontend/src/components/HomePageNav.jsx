@@ -43,36 +43,51 @@ export default function HomePageNav() {
           className={({ isActive }) =>
             `flex items-center gap-1 hover:scale-105 transition-all duration-300 ${
               isActive
-                ? "transition-all duration-300 font-semibold underline-offset-8 text-blue-700 underline scale-105"
-                : "text-gray-800 "
+                ? "font-semibold text-blue-700 scale-105"
+                : "text-gray-800"
             }`
           }>
-          <MdChat />
-          Chats
+          <button
+            className={`button-border flex items-center ${
+              location.pathname === "/chats" ? "active" : ""
+            }`}>
+            <MdChat />
+            Chats
+          </button>
         </NavLink>
         <NavLink
           to={"/users"}
           className={({ isActive }) =>
             `flex items-center gap-1 hover:scale-105 transition-all duration-300 ${
               isActive
-                ? "transition-all duration-300 font-semibold underline-offset-8 text-blue-700 underline scale-105"
-                : "text-gray-800 "
+                ? "font-semibold text-blue-700 scale-105"
+                : "text-gray-800"
             }`
           }>
-          <MdPerson />
-          Users
+          <button
+            className={`button-border flex items-center ${
+              location.pathname === "/users" ? "active" : ""
+            }`}>
+            <MdPerson />
+            Users
+          </button>
         </NavLink>
         <NavLink
           to={"/rooms"}
           className={({ isActive }) =>
             `flex items-center gap-1 hover:scale-105 transition-all duration-300 ${
               isActive
-                ? "transition-all duration-300 font-semibold underline-offset-8 text-blue-700 underline scale-105"
-                : "text-gray-800 "
+                ? "font-semibold text-blue-700 scale-105"
+                : "text-gray-800"
             }`
           }>
-          <MdGroups />
-          Rooms
+          <button
+            className={`button-border flex items-center ${
+              location.pathname === "/rooms" ? "active" : ""
+            }`}>
+            <MdGroups />
+            Rooms
+          </button>
         </NavLink>
       </div>
     </>
