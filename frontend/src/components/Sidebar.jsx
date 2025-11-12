@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
-import { MdArrowDropDown, MdDarkMode, MdLightMode } from "react-icons/md";
+import { MdDarkMode, MdLightMode, MdLogout } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { MdArrowDropUp } from "react-icons/md";
+import { FaRegCircleQuestion } from "react-icons/fa6";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,83 +50,76 @@ export default function Sidebar() {
           </div>
         </li>
 
-        {/* Dropdown */}
-        <li
-          ref={dropdownRef}
-          className="relative hover:bg-blue-500 cursor-pointer p-3 rounded px-10 transition">
-          {/* Trigger */}
-          <button
-            onClick={toggleDropdown}
-            className="flex items-center justify-between w-full font-medium">
-            <span>Recent Chats</span>
-            <span
-              className={`transform transition-transform duration-300 ${
-                isOpen ? "rotate-180" : "rotate-0"
+        <div className="flex flex-col space-y-11 justify-between">
+          {/* Dropdown */}
+          <li
+            ref={dropdownRef}
+            className="relative hover:bg-blue-600 cursor-pointer p-3 rounded px-10 transition">
+            {/* Trigger */}
+            <button
+              onClick={toggleDropdown}
+              className="flex items-center justify-between w-full font-medium">
+              <span>Recent Chats</span>
+              <span
+                className={`transform transition-transform duration-300 ${
+                  isOpen ? "rotate-180" : "rotate-0"
+                }`}>
+                <MdArrowDropUp size={22} />
+              </span>
+            </button>
+
+            {/* Dropdown content */}
+            <ul
+              className={`overflow-hidden transition-all duration-300 mt-2 space-y-2 ${
+                isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
               }`}>
-              <MdArrowDropUp size={22} />
-            </span>
-          </button>
+              <NavLink
+                to="/rooms"
+                className={({ isActive }) =>
+                  `flex items-center gap-2 p-3 rounded-lg hover:bg-blue-50 transition ${
+                    isActive ? "font-semibold text-blue-600 bg-blue-200" : ""
+                  }`
+                }>
+                <img
+                  src="avatar-placeholder.png"
+                  alt="User 1"
+                  className="rounded-full h-6"
+                />
+                <div>
+                  <h2>UserName1</h2>
+                  <p className="text-[10px] text-gray-500">last message...</p>
+                </div>
+              </NavLink>
+            </ul>
+          </li>
+          {/* Nav Links */}
+          <NavLink
+            to={"/chatpage"}
+            className={({ isActive }) =>
+              `block p-3 rounded px-10 hover:bg-blue-500 transition ${
+                isActive ? "font-semibold underline" : ""
+              }`
+            }>
+            Chat
+          </NavLink>
 
-          {/* Dropdown content */}
-          <ul
-            className={`overflow-hidden transition-all duration-300 mt-2 space-y-2 ${
-              isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
-            }`}>
-            <NavLink
-              to="/rooms"
-              className={({ isActive }) =>
-                `flex items-center gap-2 p-3 rounded-lg hover:bg-blue-50 transition ${
-                  isActive ? "font-semibold text-blue-600 bg-blue-200" : ""
-                }`
-              }>
-              <img
-                src="avatar-placeholder.png"
-                alt="User 1"
-                className="rounded-full h-6"
-              />
-              <div>
-                <h2>UserName1</h2>
-                <p className="text-[10px] text-gray-500">last message...</p>
-              </div>
-            </NavLink>
-
-            <NavLink
-              to="/user2"
-              className={({ isActive }) =>
-                `flex items-center gap-2 p-3 rounded-lg hover:bg-blue-100 transition ${
-                  isActive ? "font-semibold text-blue-600 bg-blue-50" : ""
-                }`
-              }>
-              <img
-                src="avatar-placeholder.png"
-                alt="User 2"
-                className="rounded-full h-6"
-              />
-              <div>
-                <h2>UserName2</h2>
-                <p className="text-[10px] text-gray-500">last message...</p>
-              </div>
-            </NavLink>
-          </ul>
-        </li>
-        {/* Nav Links */}
-        <NavLink
-          to={"/chatpage"}
-          className={({ isActive }) =>
-            `block p-3 rounded px-10 hover:bg-blue-500 transition ${
-              isActive ? "font-semibold underline" : ""
-            }`
-          }>
-          Chat
-        </NavLink>
-
-        <li className="hover:bg-blue-500 cursor-pointer p-3 rounded px-10">
-          About
-        </li>
-
-        <li className="hover:bg-red-400 cursor-pointer p-3 rounded px-10 font-semibold">
-          Logout
-        </li>
+          <li className="hover:bg-blue-500 cursor-pointer p-3 rounded px-10 flex gap-2 items-center">
+            <FaRegCircleQuestion size={22} className="text-blue-200" />
+            My Chats
+          </li>
+          <li className="hover:bg-blue-500 cursor-pointer p-3 rounded px-10 flex gap-2 items-center">
+            <FaRegCircleQuestion size={22} className="text-blue-200" />
+            My Rooms
+          </li>
+          <li className="hover:bg-blue-500 cursor-pointer p-3 rounded px-10 flex gap-2 items-center">
+            <FaRegCircleQuestion size={22} className="text-blue-200" />
+            Help Center
+          </li>
+          <li className="hover:bg-red-400 cursor-pointer p-3 rounded px-10 font-semibold flex items-center gap-2">
+            <MdLogout />
+            Logout
+          </li>
+        </div>
       </ul>
     </div>
   );
