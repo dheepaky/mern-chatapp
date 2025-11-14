@@ -13,13 +13,15 @@ export default function HomePageNav() {
       <div className="flex gap-2  items-center text-[14px]  md:text-[18px]  justify-between shadow-lg p-1   bg-gray-100">
         <div className="flex gap-2 items-center">
           <div className="active:bg-gray-300 md:p-3 p-2 rounded-full hover:bg-gray-200 cursor-pointer transition-all">
-            <MdMenu size={20} />
+            <MdMenu size={24} />
           </div>
-          <h2>ChatWebApp</h2>
+          <h2 className="text-[20px] bg-gradient-to-r from-blue-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+            ChatWebApp
+          </h2>
         </div>
       </div>
 
-      <div className="flex gap-2  items-center text-[15px]  md:text-[17px]  justify-between shadow-lg p-5 sticky top-0 bg-gray-100 z-10">
+      <div className=" flex gap-2  items-center text-[15px]  md:text-[17px]  justify-between shadow-lg p-5 sticky top-0 bg-gray-100 z-10">
         <NavLink
           to={"/"}
           className={({ isActive }) =>
@@ -34,7 +36,7 @@ export default function HomePageNav() {
               location.pathname === "/" ? "active" : ""
             }`}>
             <MdBorderAll />
-            All
+            <span className=" text-[16px] md:text-[20px]">All</span>
           </button>
         </NavLink>
 
@@ -52,7 +54,7 @@ export default function HomePageNav() {
               location.pathname === "/chats" ? "active" : ""
             }`}>
             <MdChat />
-            Chats
+            <span className=" text-[16px] md:text-[20px]">Chats</span>
           </button>
         </NavLink>
         <NavLink
@@ -69,7 +71,7 @@ export default function HomePageNav() {
               location.pathname === "/users" ? "active" : ""
             }`}>
             <MdPerson />
-            Users
+            <span className=" text-[16px] md:text-[20px]">Users</span>
           </button>
         </NavLink>
         <NavLink
@@ -85,8 +87,8 @@ export default function HomePageNav() {
             className={`button-border flex items-center ${
               location.pathname === "/rooms" ? "active" : ""
             }`}>
-            <MdGroups />
-            Rooms
+            <MdGroups className="text-2xl text-[18px]" />
+            <span className=" text-[16px] md:text-[20px]">Rooms</span>
           </button>
         </NavLink>
       </div>

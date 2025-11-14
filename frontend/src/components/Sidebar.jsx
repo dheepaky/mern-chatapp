@@ -3,7 +3,9 @@ import { MdDarkMode, MdLightMode, MdLogout } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { MdArrowDropUp } from "react-icons/md";
 import { FaRegCircleQuestion } from "react-icons/fa6";
-
+import { MdRecentActors } from "react-icons/md";
+import { IoChatboxEllipsesSharp } from "react-icons/io5";
+import { HiUserGroup } from "react-icons/hi";
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
@@ -14,11 +16,11 @@ export default function Sidebar() {
   return (
     <div
       className={`min-h-screen md:block hidden w-[30%] fixed top-0 px-2 text-white transition-all duration-300 ${
-        darkMode ? "bg-gray-900 text-gray-700" : "bg-blue-800"
+        darkMode ? "bg-gray-900 text-gray-700" : "bg-blue-900"
       }`}>
-      <ul className="space-y-5">
-        {/* Header */}
-        <li className="flex justify-start gap-2 items-center px-10">
+      {/* Header */}
+      <div className="space-y-5">
+        <li className="flex justify-start gap-2 items-center px-5">
           <img
             src="logo.png"
             alt=""
@@ -49,17 +51,25 @@ export default function Sidebar() {
             <p>Email@gmail.com</p>
           </div>
         </li>
+      </div>
 
-        <div className="flex flex-col space-y-11 justify-between">
-          {/* Dropdown */}
+      <div
+        className="overflow-y-auto h-[calc(100vh-230px)] "
+        style={{
+          scrollbarWidth: "thin",
+          scrollbarColor: "#60a5fa #1e3a8a",
+        }}>
+        {/* Dropdown */}
+        <ul className="space-y-5">
           <li
             ref={dropdownRef}
-            className="relative hover:bg-blue-600 cursor-pointer p-3 rounded px-10 transition">
+            className="relative hover:bg-blue-800 mt-4 cursor-pointer p-3 rounded px-10 transition">
             {/* Trigger */}
             <button
               onClick={toggleDropdown}
-              className="flex items-center justify-between w-full font-medium">
-              <span>Recent Chats</span>
+              className="flex items-center gap-2 p-3 cursor-pointer">
+              <MdRecentActors size={22} className="text-blue-200" />
+              <span className="">Recent Chats</span>
               <span
                 className={`transform transition-transform duration-300 ${
                   isOpen ? "rotate-180" : "rotate-0"
@@ -76,7 +86,7 @@ export default function Sidebar() {
               <NavLink
                 to="/rooms"
                 className={({ isActive }) =>
-                  `flex items-center gap-2 p-3 rounded-lg hover:bg-blue-50 transition ${
+                  `flex items-center gap-2 p-3 rounded-lg hover:bg-blue-500 transition ${
                     isActive ? "font-semibold text-blue-600 bg-blue-200" : ""
                   }`
                 }>
@@ -104,11 +114,11 @@ export default function Sidebar() {
           </NavLink>
 
           <li className="hover:bg-blue-500 cursor-pointer p-3 rounded px-10 flex gap-2 items-center">
-            <FaRegCircleQuestion size={22} className="text-blue-200" />
+            <IoChatboxEllipsesSharp size={22} className="text-blue-200" />
             My Chats
           </li>
           <li className="hover:bg-blue-500 cursor-pointer p-3 rounded px-10 flex gap-2 items-center">
-            <FaRegCircleQuestion size={22} className="text-blue-200" />
+            <HiUserGroup size={22} className="text-blue-200" />
             My Rooms
           </li>
           <li className="hover:bg-blue-500 cursor-pointer p-3 rounded px-10 flex gap-2 items-center">
@@ -119,8 +129,8 @@ export default function Sidebar() {
             <MdLogout />
             Logout
           </li>
-        </div>
-      </ul>
+        </ul>
+      </div>
     </div>
   );
 }

@@ -1,15 +1,19 @@
 @import "tailwindcss";
 
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 .button-border {
   font-size: 18px;
   color: #000000;
   font-family: inherit;
-  font-weight: 800;
+  font-weight: 300;
+  gap: 5px;
   cursor: pointer;
   position: relative;
   border: none;
   background: none;
-  text-transform: uppercase;
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: color;
@@ -29,11 +33,11 @@
   width: 100%;
   left: 0%;
   animation: underlineGlow 0.4s ease forwards;
-  box-shadow: 0 0 6px rgba(20, 71, 230, 0.5);
+  box-shadow: 0 0 6px rgba(20, 195, 230, 0.5);
 }
 
 .button-border:hover {
-  color: #959595;
+  color: #676666;
 }
 
 .button-border:after {
@@ -43,8 +47,8 @@
   left: 50%;
   position: absolute;
   width: 0%;
-  height: 2px;
-  background-color: #1447e6;
+  height: 1.3px;
+  background-color: #0aa5dd;
   transition: width 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
     left 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
