@@ -2,6 +2,7 @@ import {
   MdBorderAll,
   MdChat,
   MdGroups,
+  MdLightMode,
   MdMenu,
   MdPerson,
 } from "react-icons/md";
@@ -9,19 +10,35 @@ import { NavLink } from "react-router-dom";
 
 export default function HomePageNav() {
   return (
-    <>
-      <div className="flex gap-2  items-center text-[14px]  md:text-[18px]  justify-between shadow-lg p-1   bg-gray-100">
-        <div className="flex gap-2 items-center">
+    <div className="text-white">
+      <div className="flex gap-2 justify-between items-center p-1 bg-gray-100">
+        <div className="flex items-center gap-2">
           <div className="active:bg-gray-300 md:p-3 p-2 rounded-full hover:bg-gray-200 cursor-pointer transition-all">
-            <MdMenu size={24} />
+            <MdMenu size={22} />
           </div>
-          <h2 className="text-[20px] bg-gradient-to-r from-blue-400 to-cyan-400 inline-block text-transparent bg-clip-text">
-            ChatWebApp
-          </h2>
+
+          {/* logo img */}
+          <div className="flex items-center">
+            <img
+              src="logo.png"
+              alt=""
+              className="rounded-full h-10 p-1 w-fit object-cover "
+            />
+            <span className="Poppins text-[20px] bg-gradient-to-r from-blue-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+              ChatWebApp
+            </span>
+          </div>
+        </div>
+
+        {/* theme */}
+        <div className="flex items-center">
+          <MdLightMode size={22} />
         </div>
       </div>
 
-      <div className=" flex gap-2  items-center text-[15px]  md:text-[17px]  justify-between shadow-lg p-5 sticky top-0 bg-gray-100 z-10">
+      {/* nav */}
+
+      <div className=" flex  items-center text-[15px]  md:text-[17px]  justify-between shadow-lg py-5 px-1 sticky top-0 bg-blue-800 z-10 ">
         <NavLink
           to={"/"}
           className={({ isActive }) =>
@@ -36,7 +53,9 @@ export default function HomePageNav() {
               location.pathname === "/" ? "active" : ""
             }`}>
             <MdBorderAll />
-            <span className=" text-[16px] md:text-[20px]">All</span>
+            <span className=" text-[15px] md:text-[18px] text-blue-900">
+              All
+            </span>
           </button>
         </NavLink>
 
@@ -54,7 +73,7 @@ export default function HomePageNav() {
               location.pathname === "/chats" ? "active" : ""
             }`}>
             <MdChat />
-            <span className=" text-[16px] md:text-[20px]">Chats</span>
+            <span className=" text-[15px] md:text-[18px]">Chats</span>
           </button>
         </NavLink>
         <NavLink
@@ -71,7 +90,7 @@ export default function HomePageNav() {
               location.pathname === "/users" ? "active" : ""
             }`}>
             <MdPerson />
-            <span className=" text-[16px] md:text-[20px]">Users</span>
+            <span className=" text-[15px] md:text-[18px]">Users</span>
           </button>
         </NavLink>
         <NavLink
@@ -88,10 +107,10 @@ export default function HomePageNav() {
               location.pathname === "/rooms" ? "active" : ""
             }`}>
             <MdGroups className="text-2xl text-[18px]" />
-            <span className=" text-[16px] md:text-[20px]">Rooms</span>
+            <span className=" text-[15px] md:text-[18px]">Rooms</span>
           </button>
         </NavLink>
       </div>
-    </>
+    </div>
   );
 }

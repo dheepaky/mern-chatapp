@@ -16,7 +16,7 @@ export default function Sidebar() {
   return (
     <div
       className={`min-h-screen md:block hidden w-[30%] fixed top-0 px-2 text-white transition-all duration-300 ${
-        darkMode ? "bg-gray-900 text-gray-700" : "bg-blue-900"
+        darkMode ? "bg-gray-900 text-gray-700" : "bg-blue-800"
       }`}>
       {/* Header */}
       <div className="space-y-5">
@@ -26,7 +26,7 @@ export default function Sidebar() {
             alt=""
             className="rounded-full h-15 p-1 w-fit object-cover "
           />
-          <h2 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-cyan-400 inline-block text-transparent bg-clip-text ">
+          <h2 className="Poppins text-2xl font-semibold bg-gradient-to-r from-blue-400 to-cyan-400 inline-block text-transparent bg-clip-text ">
             ChatWebApp
           </h2>
         </li>
@@ -60,14 +60,13 @@ export default function Sidebar() {
           scrollbarColor: "#60a5fa #1e3a8a",
         }}>
         {/* Dropdown */}
-        <ul className="space-y-5">
-          <li
-            ref={dropdownRef}
-            className="relative hover:bg-blue-800 mt-4 cursor-pointer p-3 rounded px-10 transition">
+        <ul className="space-y-1">
+          <li className=" mt-7 rounded">
             {/* Trigger */}
             <button
               onClick={toggleDropdown}
-              className="flex items-center gap-2 p-3 cursor-pointer">
+              ref={dropdownRef}
+              className="relative hover:bg-blue-500 p-3 w-full flex items-center cursor-pointer rounded px-10 py-5 transition space-x-2">
               <MdRecentActors size={22} className="text-blue-200" />
               <span className="">Recent Chats</span>
               <span
@@ -80,13 +79,13 @@ export default function Sidebar() {
 
             {/* Dropdown content */}
             <ul
-              className={`overflow-hidden transition-all duration-300 mt-2 space-y-2 ${
+              className={`overflow-hidden transition-all duration-300 px-10 mt-2 space-y-2 ${
                 isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
               }`}>
               <NavLink
                 to="/rooms"
                 className={({ isActive }) =>
-                  `flex items-center gap-2 p-3 rounded-lg hover:bg-blue-500 transition ${
+                  `flex items-center gap-2 p-3 rounded-lg hover:bg-blue-200 transition ${
                     isActive ? "font-semibold text-blue-600 bg-blue-200" : ""
                   }`
                 }>
@@ -102,32 +101,51 @@ export default function Sidebar() {
               </NavLink>
             </ul>
           </li>
-          {/* Nav Links */}
-          <NavLink
-            to={"/chatpage"}
-            className={({ isActive }) =>
-              `block p-3 rounded px-10 hover:bg-blue-500 transition ${
-                isActive ? "font-semibold underline" : ""
-              }`
-            }>
-            Chat
-          </NavLink>
-
-          <li className="hover:bg-blue-500 cursor-pointer p-3 rounded px-10 flex gap-2 items-center">
-            <IoChatboxEllipsesSharp size={22} className="text-blue-200" />
-            My Chats
+          <li className="">
+            <NavLink
+              to={"/chatpage"}
+              className={({ isActive }) =>
+                ` cursor-pointer p-5  gap-2 flex items-center rounded px-10 hover:bg-blue-500 transition ${
+                  isActive ? "font-semibold bg-blue-500 " : ""
+                }`
+              }>
+              <IoChatboxEllipsesSharp size={22} className="text-blue-200" />
+              My Chats
+            </NavLink>
           </li>
-          <li className="hover:bg-blue-500 cursor-pointer p-3 rounded px-10 flex gap-2 items-center">
-            <HiUserGroup size={22} className="text-blue-200" />
-            My Rooms
+          <li>
+            <NavLink
+              to={"/myrooms"}
+              className={({ isActive }) =>
+                ` cursor-pointer p-5  gap-2 flex items-center rounded px-10 hover:bg-blue-500 transition ${
+                  isActive ? "font-semibold bg-blue-500 " : ""
+                }`
+              }>
+              <HiUserGroup size={22} className="text-blue-200" />
+              My Rooms
+            </NavLink>
           </li>
-          <li className="hover:bg-blue-500 cursor-pointer p-3 rounded px-10 flex gap-2 items-center">
-            <FaRegCircleQuestion size={22} className="text-blue-200" />
-            Help Center
+          <li>
+            <NavLink
+              to={"/helpcenter"}
+              className={({ isActive }) =>
+                ` cursor-pointer p-5  gap-2 flex items-center rounded px-10 hover:bg-blue-500 transition ${
+                  isActive ? "font-semibold bg-blue-500 " : ""
+                }`
+              }>
+              <FaRegCircleQuestion size={22} className="text-blue-200" />
+              Help Center
+            </NavLink>
           </li>
-          <li className="hover:bg-red-400 cursor-pointer p-3 rounded px-10 font-semibold flex items-center gap-2">
-            <MdLogout />
-            Logout
+          <li>
+            <NavLink
+              to={"/logout"}
+              className="
+              cursor-pointer p-5  gap-2 flex items-center rounded px-10 hover:text-red-200 hover:bg-red-500 transition 
+              ">
+              <MdLogout />
+              Logout
+            </NavLink>
           </li>
         </ul>
       </div>
