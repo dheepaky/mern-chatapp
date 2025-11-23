@@ -10,8 +10,8 @@ import { NavLink } from "react-router-dom";
 
 export default function HomePageNav() {
   return (
-    <div className="text-white">
-      <div className="flex gap-2 justify-between items-center p-1 bg-gray-100">
+    <>
+      <div className="flex gap-2 justify-between items-center p-1 bg-gray-100 md:hidden">
         <div className="flex items-center gap-2">
           <div className="active:bg-gray-300 md:p-3 p-2 rounded-full hover:bg-gray-200 cursor-pointer transition-all">
             <MdMenu size={22} />
@@ -38,7 +38,7 @@ export default function HomePageNav() {
 
       {/* nav */}
 
-      <div className=" flex  items-center text-[15px]  md:text-[17px]  justify-between shadow-lg py-5 px-1 sticky top-0 bg-blue-800 z-10 ">
+      <div className=" flex  items-center text-[15px]  md:text-[17px]  justify-between shadow-lg py-5 px-1 sticky top-0 bg-gray-100 z-10">
         <NavLink
           to={"/"}
           className={({ isActive }) =>
@@ -53,7 +53,7 @@ export default function HomePageNav() {
               location.pathname === "/" ? "active" : ""
             }`}>
             <MdBorderAll />
-            <span className=" text-[15px] md:text-[18px] text-blue-900">
+            <span className=" text-[15px] md:text-[18px] text-blue-00">
               All
             </span>
           </button>
@@ -111,6 +111,6 @@ export default function HomePageNav() {
           </button>
         </NavLink>
       </div>
-    </div>
+    </>
   );
 }
